@@ -1,0 +1,19 @@
+@page "/services"
+@using PortfolioWebsite.Models
+
+<h3>Services</h3>
+@foreach (var service in _services)
+{
+    <div>
+        <h4>@service.Name</h4>
+        <p>@service.Description</p>
+    </div>
+}
+
+@code {
+    private readonly List<Service> _services =
+    [
+        new Service { Name = "Web Development", Description = "Building responsive web applications." },
+        new Service { Name = "Consulting", Description = "Providing professional consulting services." }
+    ];
+}

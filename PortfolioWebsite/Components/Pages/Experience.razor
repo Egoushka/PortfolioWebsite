@@ -1,0 +1,20 @@
+@page "/experience"
+@using PortfolioWebsite.Models
+
+<h3>Experience</h3>
+@foreach (var job in Jobs)
+{
+    <div>
+        <h4>@job.Position at @job.Company</h4>
+        <p>@job.Description</p>
+        <p><strong>Duration:</strong> @job.StartDate - @job.EndDate</p>
+    </div>
+}
+
+@code {
+    private List<Job> Jobs =
+    [
+        new Job { Position = "Developer", Company = "Company A", Description = "Worked on project A", StartDate = "2020", EndDate = "2021" },
+        new Job { Position = "Senior Developer", Company = "Company B", Description = "Worked on project B", StartDate = "2021", EndDate = "Present" }
+    ];
+}

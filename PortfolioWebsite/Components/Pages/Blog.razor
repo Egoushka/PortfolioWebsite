@@ -1,0 +1,20 @@
+@page "/blog"
+@using PortfolioWebsite.Models
+
+<h3>Blog</h3>
+@foreach (var post in _blogPosts)
+{
+    <div>
+        <h4>@post.Title</h4>
+        <p>@post.Content</p>
+        <p><small>@post.Date</small></p>
+    </div>
+}
+
+@code {
+    private readonly List<BlogPost> _blogPosts =
+    [
+        new BlogPost { Title = "Post 1", Content = "Content 1", Date = DateTime.Now },
+        new BlogPost { Title = "Post 2", Content = "Content 2", Date = DateTime.Now }
+    ];
+}

@@ -1,0 +1,19 @@
+@page "/skills"
+@using PortfolioWebsite.Models
+
+<h3>Skills</h3>
+@foreach (var skill in _skills)
+{
+    <div>
+        <h4>@skill.Name</h4>
+        <p>@skill.Description</p>
+    </div>
+}
+
+@code {
+    private readonly List<Skill> _skills =
+    [
+        new Skill { Name = "C#", Description = "Proficient in C# programming." },
+        new Skill { Name = ".NET", Description = "Experienced with .NET framework." }
+    ];
+}

@@ -1,0 +1,37 @@
+@page "/contact"
+
+<h3>Contact Me</h3>
+<EditForm Model="@contactModel" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Name:</label>
+        <InputText id="name" @bind-Value="contactModel.Name" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <InputText id="email" @bind-Value="contactModel.Email" />
+    </div>
+    <div>
+        <label>Message:</label>
+        <InputTextArea id="message" @bind-Value="contactModel.Message" />
+    </div>
+    <button type="submit">Send</button>
+</EditForm>
+
+@code {
+    private ContactModel contactModel = new ContactModel();
+
+    private void HandleValidSubmit()
+    {
+        // Handle form submission
+    }
+
+    private class ContactModel
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Message { get; set; }
+    }
+}

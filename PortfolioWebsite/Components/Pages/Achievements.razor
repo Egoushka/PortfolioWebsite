@@ -1,0 +1,20 @@
+@page "/achievements"
+@using PortfolioWebsite.Models
+
+<h3>Achievements</h3>
+@foreach (var achievement in _achievements)
+{
+    <div>
+        <h4>@achievement.Title</h4>
+        <p>@achievement.Description</p>
+        <p><small>@achievement.Date</small></p>
+    </div>
+}
+
+@code {
+    private readonly List<Achievement> _achievements =
+    [
+        new Achievement { Title = "Award 1", Description = "Received award for excellence.", Date = "2022" },
+        new Achievement { Title = "Certification 1", Description = "Certified in XYZ.", Date = "2021" }
+    ];
+}

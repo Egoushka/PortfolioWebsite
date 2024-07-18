@@ -1,0 +1,19 @@
+@page "/testimonials"
+@using PortfolioWebsite.Models
+
+<h3>Testimonials</h3>
+@foreach (var testimonial in _testimonials)
+{
+    <div>
+        <p>"@testimonial.Feedback"</p>
+        <p><strong>- @testimonial.Name</strong></p>
+    </div>
+}
+
+@code {
+    private readonly List<Testimonial> _testimonials =
+    [
+        new Testimonial { Name = "Client 1", Feedback = "Great work!" },
+        new Testimonial { Name = "Client 2", Feedback = "Very professional." }
+    ];
+}

@@ -1,0 +1,20 @@
+@page "/portfolio"
+@using PortfolioWebsite.Models
+
+<h3>Portfolio</h3>
+@foreach (var project in _projects)
+{
+    <div>
+        <h4>@project.Name</h4>
+        <p>@project.Description</p>
+        <img src="@project.ImageUrl" alt="@project.Name" />
+    </div>
+}
+
+@code {
+    private readonly List<Project> _projects =
+    [
+        new Project { Name = "Project 1", Description = "Description 1", ImageUrl = "image1.jpg" },
+        new Project { Name = "Project 2", Description = "Description 2", ImageUrl = "image2.jpg" }
+    ];
+}
